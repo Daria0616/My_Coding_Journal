@@ -62,6 +62,3 @@ cache/
 *.pdb
 *.dSYM/
 cmake-build-*/
-
-# Independent local repository migrated from during this cleanup
-GT/
