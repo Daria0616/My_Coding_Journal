@@ -45,3 +45,23 @@ temp/
 cache/
 *.tmp
 *.bak
+
+# C/C++ build artifacts
+*.exe
+*.o
+*.obj
+*.gch
+*.pch
+*.dll
+*.lib
+*.a
+*.so
+*.dylib
+*.out
+*.ilk
+*.pdb
+*.dSYM/
+cmake-build-*/
+
+# Independent local repository migrated from during this cleanup
+GT/
