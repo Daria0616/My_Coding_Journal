@@ -24,8 +24,36 @@
  * 限制：
  * 代码长度 16 KB，时间 400 ms，内存 64 MB。
  */
-
 #include <iostream>
+using namespace std;
+int main()
+{    
+int year,month,day,sum=0;    
+cin>>year>>month>>day;    
+switch(month-1){        
+case 11:sum+=30;        
+case 10:sum+=31;        
+case 9:sum+=30;        
+case 8:sum+=31;        
+case 7:sum+=31;        
+case 6:sum+=30;        
+case 5:sum+=31;        
+case 4:sum+=30;        
+case 3:sum+=31;        
+case 2:        
+if ((year%4==0&&year%100!=0)||(year%400==0))            
+sum+=29;        
+else            
+sum+=28;        
+case 1:sum+=31;        
+case 0:break;    
+}    
+sum+=day;    
+cout<<year<<"年"<<month<<"月"<<day<<"日"<<"是该年的第"<<sum<<"天。"<<endl;    
+return 0;
+}
+
+/*#include <iostream>
 using namespace std;
 
 int main()
@@ -56,3 +84,4 @@ int main()
 
     return 0;
 }
+    */
