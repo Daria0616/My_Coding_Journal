@@ -28,13 +28,13 @@ int main()
     int previous = 1;
     int current = 1;
 
-    for (int month = 3; month <= 12; month++) {
-        int next = previous + current;
-        previous = current;
-        current = next;
+    for (int month=3;month<=12;month++) {
+        int next=previous+current;
+        previous=current;
+        current=next;
     }
 
-    cout << "第12个月兔子共有" << current << "对" << endl;
+    cout<<"第12个月兔子共有"<< current <<"对"<< endl;
 
-    return 0;
+    return 0; 
 }
