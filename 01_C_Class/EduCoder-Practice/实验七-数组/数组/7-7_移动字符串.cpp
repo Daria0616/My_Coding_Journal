@@ -23,10 +23,18 @@
  * 原字符串为 ABCDEFGHIJK，m=3 时，前 3 个字符 ABC 移到末尾，
  * 移动后字符串内容为 DEFGHIJKABC。
  *
- * 错题复盘（评测 2 次）：
- * 第一次“3 组测试结果不匹配”。对比失败代码：函数声明返回 string，
- * 但拼接完 str=right+left 后漏写 return str;，函数没有返回值；补上 return str 后通过。
- * 提交记录截图：../../images/4212814-7_移动字符串_提交记录.png
+ * 错题复盘（评测 2 次）：第一次“3 组测试结果不匹配”。
+ *
+ * 【平台记录：首次提交 fun 函数体】
+ *   string left  = str.substr(0, m);
+ *   string right = str.substr(m);
+ *   str = right + left;
+ *   return str;
+ *
+ * 【错因】从平台记录看，fun 体内的截取、拼接、返回与通过版基本一致，
+ *  问题出在返回结果与主程序输出的衔接：函数返回的拼接结果未被正确接收/输出，
+ *  导致测试拿不到移动后的字符串；并非 substr 拼接逻辑写错。
+ * 【修正】确保 fun 返回拼接后的 str，并在主程序中输出该返回值，即下方代码。
  */
 
 #include <iostream>
