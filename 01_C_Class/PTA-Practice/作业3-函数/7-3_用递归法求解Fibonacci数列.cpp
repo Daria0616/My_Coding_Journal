@@ -30,33 +30,42 @@
  *
  * 输出样例 3：
  * Wrong Input!
+ *
+ * 说明：
+ * F(50) 已超出 int 范围，结果用 unsigned long long 保存；
+ * 递归加记忆化（memo 数组），避免 n=50 时重复计算导致超时。
  */
 
 #include <stdio.h>
 
-int F(int n)
-{
-    if (n < 1 || n > 50)
-        return -1;
+#define MAX_N 50
 
+static unsigned long long memo[MAX_N + 1];
+
+unsigned long long Fibonacci(int n)
+{
     if (n == 1 || n == 2)
         return 1;
 
-    return F(n - 1) + F(n - 2);
+    if (memo[n] != 0)
+        return memo[n];
+
+    memo[n] = Fibonacci(n - 1) + Fibonacci(n - 2);
+    return memo[n];
 }
 
 int main(void)
 {
     int n;
 
-    if (scanf("%d", &n) != EOF) {
-        int result = F(n);
+    if (scanf("%d", &n) == EOF)
+        return 0;
 
-        if (result != -1)
-            printf("F(%d)=%d\n", n, result);
-        else
-            printf("Wrong Input!");
+    if (n < 1 || n > MAX_N) {
+        printf("Wrong Input!\n");
+        return 0;
     }
 
+    printf("F(%d)=%llu\n", n, Fibonacci(n));
     return 0;
 }

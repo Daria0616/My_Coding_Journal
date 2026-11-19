@@ -20,6 +20,8 @@
  *
  * 输出样例：
  * 153
+ *
+ * 限制：代码长度 16 KB，时间 400 ms，内存 64 MB。
  */
 
 #include <stdio.h>
@@ -30,11 +32,10 @@ int main(void)
 {
     unsigned int m;
     unsigned long s = 0;
-    int i;
 
     scanf("%u", &m);
 
-    for (i = 1; i <= m; i++)
+    for (unsigned int i = 1; i <= m; i++)
         s += Fact(i);
 
     printf("%lu\n", s);
@@ -44,9 +45,8 @@ int main(void)
 unsigned long Fact(unsigned int n)
 {
     unsigned long result = 1;
-    unsigned int i;
 
-    for (i = 1; i <= n; i++)
+    for (unsigned int i = 1; i <= n; i++)
         result *= i;
 
     return result;
