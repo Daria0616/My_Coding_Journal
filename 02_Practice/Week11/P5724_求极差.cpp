@@ -47,10 +47,9 @@ int getRange(int arr[], int length)
     for (int i = 1; i < length; i++) {
         if (arr[i] > max_val)
             max_val = arr[i];
-        if (arr[i] < min_val)
-            min_val = arr[i];
+        else if(arr[i] < min_val)                                                 //if (arr[i] < min_val)   min_val = arr[i];  
+            min_val=arr[i];                                                                                                                                              
     }
-
     return max_val - min_val;
 }
 

@@ -24,24 +24,23 @@
 #include <iostream>
 using namespace std;
 
-int jie(int n)
+int Fact(int n)
 {
-    if (n == 1)
+    if (n == 1|| n == 0)
         return 1;
     else {
         int c;
-        c = n * jie(n - 1);
+        c = n * Fact(n - 1);
         return c;
     }
 }
 
 int main()
 {
-    int n, jn;
-
+    int n, fn;
     cin >> n;
-    jn = jie(n);
-    cout << jn << endl;
+    fn = Fact(n);
+    cout << fn << endl;
 
     return 0;
 }
