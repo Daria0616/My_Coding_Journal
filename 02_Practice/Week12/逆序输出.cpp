@@ -19,22 +19,23 @@ int main(){
     return 0;
 }
 
-/*输入10个数，并以输入时相反的顺序输出这10个数
-**方法一**
+/*推广：输入10个数，并以输入时相反的顺序输出这10个数
+**方法一：逆序遍历法**
 #include <iostream>
+#define N 10
 using namespace std;
 int main(){
-    int a[10];
-    cout<<"Input 10 numbers:\n";
-    for (int i=0;i<10;i++)
-        cin>>a[i];                                           //cin>>a[9-i]; 反序存放也可     输出时用for (int i=0;i<10;i++)   cout<<a[i]<<" ";
+    int a[N];
+    cout<<"Input "<<N<<" numbers:\n";
+    for (int i=0;i<N;i++)
+        cin>>a[i];                                           //cin>>a[N-1-i]; 反序存放也可     输出时用for (int i=0;i<N;i++)   cout<<a[i]<<" ";
     cout<<"The numbers in reverse order:\n";
-    for (int i=9;i>=0;i--)
+    for (int i=N-1;i>=0;i--)
         cout<<a[i]<<" ";
     cout<<"\n";
     return 0;
 }
-**方法二**
+**方法二：首尾交换法**
 #include <iostream>
 #define N 10
 using namespace std;

@@ -25,16 +25,15 @@
  *
  * 错题复盘（评测 2 次）：第一次“3 组测试结果不匹配”。
  *
- * 【平台记录：首次提交 fun 函数体】
- *   string left  = str.substr(0, m);
- *   string right = str.substr(m);
- *   str = right + left;
- *   return str;
+ * 【平台记录：首次提交 错误代码】
+ *   string str ;
+	int m;
+    //输入m的值，作为字符串的分割位置
+	cin >> m ;
+    fun( str , m );
  *
- * 【错因】从平台记录看，fun 体内的截取、拼接、返回与通过版基本一致，
- *  问题出在返回结果与主程序输出的衔接：函数返回的拼接结果未被正确接收/输出，
- *  导致测试拿不到移动后的字符串；并非 substr 拼接逻辑写错。
- * 【修正】确保 fun 返回拼接后的 str，并在主程序中输出该返回值，即下方代码。
+ * 【错因】未初始化字符串str；未对fun函数的返回值进行输出。
+ * 【修正】初始化字符串str，并在主程序中输出该返回值，即下方代码。
  */
 
 #include <iostream>
@@ -60,6 +59,6 @@ int main()
     int m;
     // 输入 m 的值，作为字符串的分割位置
     cin >> m;
-    cout << fun(str, m) << endl;
+    cout<<fun(str, m)<<endl;
     return 0;
 }

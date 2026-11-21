@@ -16,16 +16,7 @@
  * 输出样例：
  * 0.0003200000
  *
- * 错题复盘（评测 2 次）：首次提交 10 组中 9 组不匹配。
- *
- * 【错误代码（首次提交，主程序）】
- *   int n;
- *   double x;
- *   cout << fixed << setprecision(10) << pow(x, n) << endl;
- *
- * 【错因】漏写读入语句 `cin >> x >> n;`，x、n 未初始化就参与 pow 计算，
- *  结果取自随机值。
- * 【修正】先读入 x、n 再调用 pow(x, n)，即下方代码。
+ * 【思路】使用 pow 函数计算 x 的 n 次方，使用 setprecision 设置输出精度。
  */
 
 #include <iostream>
