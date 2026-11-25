@@ -32,7 +32,7 @@ int properDivisorSum(int n)
         if (n % i == 0) {
             sum += i;
 
-            if (i != n / i)
+            if (i != n / i)           //避免重复加上平方根
                 sum += n / i;
         }
     }
