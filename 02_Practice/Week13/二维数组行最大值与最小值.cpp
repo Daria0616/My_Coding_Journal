@@ -1,5 +1,10 @@
-
-
+/*题目1：二维数组行最大值与最小值
+给定一个 m×n 的整型二维数组，要求：
+1. 写函数 void rowMax(int a[][100], int m, int n, int res[])，把每行最大值存入 res；
+2. 写函数 int minOfArray(int b[], int len)，求 res 中的最小值并返回；
+3. 在 main 中输入 m、n 和数组元素，输出每行最大值及这些最大值中的最小值。
+要求：处理 m<=0、n<=0、m>100、n>100 的非法输入；测试全负数、单行、单列、重复最大值各一组。
+*/
 #include <iostream>  
 using namespace std;
 
@@ -40,4 +45,3 @@ int main(){
     cout <<endl<< min_val << endl;
     return 0;                  
 }
-//第一次，尝试在函数一中输出

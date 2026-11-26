@@ -1,3 +1,7 @@
+/*题目2：字符串处理函数
+写函数 int strAnalyze(char s[], int cnt[])，统计字符串中英文字母、数字、空格和其他字符的个数，分别存入 cnt[0]～cnt[3]，返回字符串长度。在 main 中输入一行字符串（可含空格），调用函数并输出四类字符个数和长度。
+要求：用 fgets 读入并处理末尾换行；测试空串、全空格、含数字字母混合、含标点各一组；不要用全局变量。
+*/
 #include <stdio.h>
 int strAnalyze(char s[],int cnt[]){
     int i=0;
@@ -17,13 +21,10 @@ int strAnalyze(char s[],int cnt[]){
 int main(){
     char s[100];
     fgets(s,100,stdin);
-    while(s[0]=='\n'){
-        fgets(s,100,stdin);  //处理首行为空的情况
-    }
     int k=0;
     while(s[k]!='\0'){
         if(s[k]=='\n'){
-            s[k]='\0';  //处理末尾换行符
+            s[k]='\0';  
             break;
         }
         k++;
