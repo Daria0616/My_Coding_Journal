@@ -25,26 +25,38 @@
  * 1 189 1
  * 1 189 3
  * 3 187 2
- *
- * 练习卷：Begin-End 之间留空，请自行补全。
  */
 
 #include <stdio.h>
-
-/* 可在此定义存放歌手编号与总分的结构体 */
-
-int main()
-{
-    int n, m;
-
-    scanf("%d %d", &n, &m);
-
-    /********** Begin **********/
-    // 在此定义存放歌手编号、总分的结构体与数组；
-    // 读入 m 轮得分，统计总分，按总分降序排名并输出（循环变量自行声明）。
-
-
-    /********** End **********/
-
+int main(){
+    int m,n;
+    scanf("%d%d",&n,&m);
+    int sum[11]={0};
+    int id[11];
+    for (int i=1;i<=n;i++)
+        id[i]=i;
+     for (int r=0;r<m;r++)
+         for (int i=1;i<=n;i++){
+             int s;
+             scanf("%d",&s);
+             sum[i]+=s;
+         }
+    for (int i=1;i<=n;i++){
+        int pos=i;
+        for (int j=i+1;j<=n;j++){
+            int a=id[pos],b=id[j];
+            if (sum[b]>sum[a]||(sum[b]==sum[a]&&b<a))
+                pos=j;
+        }
+        int t=id[i];
+        id[i]=id[pos];
+        id[pos]=t;
+    }
+     for (int i=1;i<=n;i++){
+         int rk=i;
+         if (i>1&&sum[id[i]]==sum[id[i-1]])
+             rk=rk-1;
+         printf("%d %d %d\n",rk,sum[id[i]],id[i]);
+     }
     return 0;
 }

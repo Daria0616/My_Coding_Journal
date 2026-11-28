@@ -10,24 +10,29 @@
  * 输出样例：
  * 交换后的数据:1 3 6 11 22 0 -1 5 9 12
  *
- * 练习卷：Begin-End 之间留空，请自行补全。
  */
 
 #include <stdio.h>
-
-int main()
-{
+int main(){
     int a[10];
-    int i;
-
-    for (i = 0; i < 10; i++) {
-        scanf("%d", &a[i]);
+    int t=0,j=0;
+    for (int i=0;i<10;i++)
+        scanf("%d",&a[i]);
+    int max_val=a[0],min_val=a[0];
+    for (int i=1;i<10;i++){
+        if (a[i]>max_val){
+            max_val=a[i];
+            t=i;}
+        else if (a[i]<min_val){
+                min_val=a[i];
+                j=i;}
     }
-
-    /********** Begin **********/
-
-
-    /********** End **********/
-
+    int m=a[j];
+    a[j]=a[t];
+    a[t]=m;
+    printf("交换后的数据:");
+    for (int i=0;i<10;i++)
+        printf("%d ",a[i]);
+    printf("\n");
     return 0;
 }

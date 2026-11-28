@@ -16,21 +16,18 @@
  * 输出样例：
  * 2
  *
- * 练习卷：Begin-End 之间留空，请自行补全。
  */
 
 #include <stdio.h>
-
-int main()
-{
-    char word[101];
-
-    scanf("%s", word);
-
-    /********** Begin **********/
-
-
-    /********** End **********/
-
+#include <string.h>
+int main(){
+    char str[110];//防越界
+    scanf("%s",str);
+    int cnt=0;
+    for (int k=0;str[k]!='\0';k++)
+    if (str[k]=='a'||str[k]=='e'||str[k]=='i'||str[k]=='o'||str[k]=='u'){
+        cnt++;
+    }
+    printf("%d\n",cnt);
     return 0;
 }

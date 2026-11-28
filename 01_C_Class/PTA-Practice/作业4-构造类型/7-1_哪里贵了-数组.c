@@ -22,20 +22,25 @@
  * 输出样例：
  * 40.3 81.2 66.9 34.4 33.1 32.1 12.6 62.8
  *
- * 练习卷：Begin-End 之间留空，请自行补全。
  */
 
 #include <stdio.h>
-
-int main()
-{
-    /********** Begin **********/
-    // 读入商品数量 n 与 n 个价格；
-    // 先求平均价 avg；价格超过平均价的打 9 折，其余不变；
-    // 输出保留 1 位小数，末尾无多余空格。
-
-
-    /********** End **********/
-
+int main(){
+    int n;
+    float sum=0;
+    float p[100];
+    scanf("%d",&n);
+    for (int i=0;i<n;i++){
+        scanf("%f",&p[i]);
+        sum+=p[i];
+    }
+    float average=sum/n;
+    for (int i=0;i<n;i++){
+        if (p[i]>average)
+            p[i]*=0.9;
+    }
+    for (int i=0;i<n-1;i++)
+        printf("%.1f ",p[i]);
+    printf("%.1f\n",p[n-1]);
     return 0;
 }
