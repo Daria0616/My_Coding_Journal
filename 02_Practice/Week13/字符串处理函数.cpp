@@ -36,4 +36,3 @@ int main(){
     }
     printf("\n%d\n", len);
     return 0;
-}
